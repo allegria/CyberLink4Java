@@ -13,10 +13,10 @@
 *	
 ******************************************************************/
 
-package org.cybergarage.sql.mysql;
+package org.cybergarage.util.sql.mysql;
 
 import java.sql.*;
-import org.cybergarage.sql.*;
+import org.cybergarage.util.sql.*;
 import org.cybergarage.util.*;
 
 public class MySQL extends Database

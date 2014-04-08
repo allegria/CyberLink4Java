@@ -16,7 +16,7 @@
 package org.cybergarage.upnp.std.av.server.directory.mythtv;
 
 import java.util.*;
-import org.cybergarage.sql.mysql.*;
+import org.cybergarage.util.sql.mysql.*;
 
 public class MythDatabase extends MySQL
 {

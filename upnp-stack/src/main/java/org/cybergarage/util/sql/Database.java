@@ -13,7 +13,7 @@
 *	
 ******************************************************************/
 
-package org.cybergarage.sql;
+package org.cybergarage.util.sql;
 
 import java.sql.*;
 import org.cybergarage.util.*;
