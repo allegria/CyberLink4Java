@@ -1,0 +1,61 @@
+allprojects {
+
+	apply plugin: 'eclipse'
+	
+	group = 'org.cybergarage.upnp'
+	version = '2.2.1'	
+	
+	task wrapper(type: Wrapper) {
+		gradleVersion = '1.11'
+	}
+
+	/* use this task if need to look up warnings for input files that use unchecked or unsafe operations.
+	tasks.withType(Compile) {
+		options.compilerArgs << "-Xlint:unchecked"
+	}
+    */
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'application'
+
+	sourceCompatibility = 1.6
+	targetCompatibility = 1.6
+	
+	repositories {
+	   mavenCentral()
+	}
+
+	dependencies {
+		testCompile group: 'junit', name: 'junit', version: '4.+'
+	}
+
+	jar {
+		from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+		manifest {
+			attributes 'Implementation-Title': 'CyberLink 4 Java', 'Implementation-Version': version
+			attributes 'Main-Class': 'org.cybergarage.mediagate.MediaGate'
+					}
+	}
+
+}
+
+project(':upnp-apps-examples:mediagate') {
+	dependencies {
+		compile project(':upnp-av')
+		}
+}
+
+project(':upnp-av') {
+	dependencies {
+		compile project(':upnp-stack')
+		}
+}
+
+project(':upnp-stack') {
+	dependencies {
+		compile 'net.sf.kxml:kxml2:2.2.2'
+		compile 'xerces:xercesImpl:2.8.0'
+		}
+}

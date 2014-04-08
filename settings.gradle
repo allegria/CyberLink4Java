@@ -1,0 +1,1 @@
+include 'upnp-stack', 'upnp-av', 'upnp-apps-examples:mediagate' 
