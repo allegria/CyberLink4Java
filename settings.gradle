@@ -1,1 +1,1 @@
-include 'upnp-stack', 'upnp-av', 'upnp-apps-examples:mediagate' 
+include 'upnp-stack', 'upnp-av', 'upnp-apps-samples:mediagate' 

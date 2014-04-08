@@ -41,7 +41,7 @@ subprojects {
 
 }
 
-project(':upnp-apps-examples:mediagate') {
+project(':upnp-apps-samples:mediagate') {
 	dependencies {
 		compile project(':upnp-av')
 		}
