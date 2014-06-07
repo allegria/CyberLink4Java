@@ -25,7 +25,7 @@ import org.cybergarage.upnp.std.av.server.object.item.*;
 public class FileItemNode extends ItemNode
 {
 	////////////////////////////////////////////////
-	// Constroctor
+	// Constructor
 	////////////////////////////////////////////////
 	
 	public FileItemNode()

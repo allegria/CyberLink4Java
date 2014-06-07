@@ -24,7 +24,7 @@ import org.cybergarage.xml.Node;
 public class DIDLLiteNode extends Node // Thanks for Brent Hills (10/28/04)
 {
 	////////////////////////////////////////////////
-	// Constroctor
+	// Constructor
 	////////////////////////////////////////////////
 	
 	public DIDLLiteNode()

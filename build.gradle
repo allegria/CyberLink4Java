@@ -6,7 +6,7 @@ allprojects {
 	version = '2.2.1'	
 	
 	task wrapper(type: Wrapper) {
-		gradleVersion = '1.11'
+		gradleVersion = '1.12'
 	}
 
 	/* use this task if need to look up warnings for input files that use unchecked or unsafe operations.

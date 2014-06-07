@@ -20,6 +20,7 @@ import org.cybergarage.upnp.std.av.server.*;
 //import org.cybergarage.upnp.std.av.object.*;
 import org.cybergarage.upnp.std.av.server.directory.file.*;
 import org.cybergarage.upnp.std.av.server.directory.mythtv.*;
+import org.cybergarage.upnp.std.av.server.directory.cmis.*;
 import org.cybergarage.mediagate.frame.*;
 import org.cybergarage.mediagate.frame.swing.*;
 import org.cybergarage.upnp.std.av.server.object.format.*;
@@ -34,6 +35,7 @@ public class MediaGate
     private final static int MODE_OPT_MASK = 0x00FF;
     private final static int FILESYS_MODE = 0x0000;
     private final static int MYTHTV_MODE = 0x0001;
+    private final static int CMIS_MODE = 0x0FFF;
 
     /**** Support Option ****/
     private final static int SUPPORT_OPT_MASK = 0xFF00;
@@ -72,6 +74,15 @@ public class MediaGate
                     MythDirectory mythDir = new MythDirectory();
                     mediaServ.addContentDirectory(mythDir);
                 }
+            case CMIS_MODE:
+            {
+                mediaServ.addPlugIn(new ID3Format());
+                mediaServ.addPlugIn(new GIFFormat());
+                mediaServ.addPlugIn(new JPEGFormat());
+                mediaServ.addPlugIn(new PNGFormat());
+                mediaServ.addPlugIn(new MPEGFormat());
+                loadUserDirectories();
+            }
                 break;
             }
 
