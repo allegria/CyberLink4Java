@@ -19,7 +19,7 @@ import java.io.*;
 
 import org.cybergarage.upnp.std.av.server.object.*;
 import org.cybergarage.upnp.std.av.server.object.item.*;
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.util.*;
 
 public class ID3Format extends Header implements Format, FormatObject

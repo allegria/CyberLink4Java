@@ -30,8 +30,8 @@ public class MediaGate
     ////////////////////////////////////////////////
     // Constants
     ////////////////////////////////////////////////
-
-    /**** Mode Option ****/
+	
+	/**** Mode Option ****/
     private final static int MODE_OPT_MASK = 0x00FF;
     private final static int FILESYS_MODE = 0x0000;
     private final static int MYTHTV_MODE = 0x0001;
@@ -273,7 +273,7 @@ public class MediaGate
 
     public static void main(String args[])
     {
-        Debug.off();
+        Debug.on();
 
         boolean need_gui = true;
         int mode = FILESYS_MODE;

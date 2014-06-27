@@ -32,7 +32,7 @@
 
 package org.cybergarage.upnp.event;
 
-import org.cybergarage.http.*;
+import org.cybergarage.net.http.*;
 
 import org.cybergarage.upnp.*;
 import org.cybergarage.upnp.device.*;

@@ -16,7 +16,7 @@
 package org.cybergarage.upnp.event;
 
 import org.cybergarage.upnp.*;
-import org.cybergarage.http.*;
+import org.cybergarage.net.http.*;
 
 public class SubscriptionResponse extends HTTPResponse
 {

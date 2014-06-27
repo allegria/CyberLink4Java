@@ -38,9 +38,9 @@
 
 package org.cybergarage.upnp.event;
 
-import org.cybergarage.http.*;
-import org.cybergarage.xml.*;
-import org.cybergarage.soap.*;
+import org.cybergarage.net.http.*;
+import org.cybergarage.util.xml.*;
+import org.cybergarage.net.soap.*;
 
 import org.cybergarage.upnp.device.*;
 

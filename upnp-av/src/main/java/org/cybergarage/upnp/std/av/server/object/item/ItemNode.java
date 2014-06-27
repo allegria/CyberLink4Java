@@ -23,7 +23,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import org.cybergarage.util.*;
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.std.av.server.*;
 import org.cybergarage.upnp.std.av.server.object.*;
 import org.cybergarage.upnp.std.av.server.object.container.ContainerNode;

@@ -20,7 +20,7 @@
 package org.cybergarage.upnp.xml;
 
 import org.cybergarage.util.*;
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 
 import org.cybergarage.upnp.event.*;
 

@@ -37,7 +37,7 @@ import org.cybergarage.upnp.control.ControlResponse;
 import org.cybergarage.upnp.xml.ActionData;
 import org.cybergarage.util.Debug;
 import org.cybergarage.util.Mutex;
-import org.cybergarage.xml.Node;
+import org.cybergarage.util.xml.Node;
 
 public class Action
 {

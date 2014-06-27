@@ -17,7 +17,7 @@ import java.io.*;
 
 import org.cybergarage.net.*;
 import org.cybergarage.util.*;
-import org.cybergarage.http.*;
+import org.cybergarage.net.http.*;
 import org.cybergarage.upnp.*;
 import org.cybergarage.upnp.control.ActionListener;
 import org.cybergarage.upnp.device.*;

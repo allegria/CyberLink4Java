@@ -20,9 +20,9 @@
 package org.cybergarage.upnp.control;
 
 import org.cybergarage.upnp.*;
-import org.cybergarage.http.*;
-import org.cybergarage.soap.*;
-import org.cybergarage.xml.*;
+import org.cybergarage.net.http.*;
+import org.cybergarage.net.soap.*;
+import org.cybergarage.util.xml.*;
 
 public class ActionResponse extends ControlResponse
 {

@@ -20,7 +20,7 @@ import java.io.*;
 
 import org.cybergarage.net.*;
 import org.cybergarage.util.*;
-import org.cybergarage.http.*;
+import org.cybergarage.net.http.*;
 import org.cybergarage.upnp.*;
 import org.cybergarage.upnp.UPnP;
 import org.cybergarage.upnp.device.*;
@@ -34,6 +34,7 @@ public class MediaServer extends Device
 	
 	public final static String DEVICE_TYPE = "urn:schemas-upnp-org:device:MediaServer:1";
 	
+	public final static String HOST_INET = "192.168.1.9";
 	public final static int DEFAULT_HTTP_PORT = 38520;
 	
 	public final static String DESCRIPTION = 
@@ -114,12 +115,13 @@ public class MediaServer extends Device
 	
 	private void initialize()
 	{
-		// Netwroking initialization		
+		// Networking initialization		
 		UPnP.setEnable(UPnP.USE_ONLY_IPV4_ADDR);
-		String firstIf = HostInterface.getHostAddress(0);
-		setInterfaceAddress(firstIf);
+		//String firstIf = HostInterface.getHostAddress(0);
+		setInterfaceAddress(HOST_INET);
 		setHTTPPort(DEFAULT_HTTP_PORT);
 		
+		// Service initialisation
 		conDir = new ContentDirectory(this);
 		conMan = new ConnectionManager(this);
 		
@@ -184,7 +186,7 @@ public class MediaServer extends Device
 	}
 
 	////////////////////////////////////////////////
-	// PulgIn
+	// PlugIn
 	////////////////////////////////////////////////
 	
 	public boolean addPlugIn(Format format)
@@ -207,7 +209,7 @@ public class MediaServer extends Device
 	}			
 
 	////////////////////////////////////////////////
-	// HttpRequestListner (Overridded)
+	// HttpRequestListner (Overridden)
 	////////////////////////////////////////////////
 	
 	public void httpRequestRecieved(HTTPRequest httpReq)

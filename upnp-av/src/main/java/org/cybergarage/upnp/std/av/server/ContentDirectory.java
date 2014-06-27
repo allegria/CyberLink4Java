@@ -35,7 +35,8 @@ import java.io.*;
 import java.util.*;
 
 import org.cybergarage.util.*;
-import org.cybergarage.http.*;
+import org.cybergarage.util.xml.*;
+import org.cybergarage.net.http.*;
 import org.cybergarage.upnp.*;
 import org.cybergarage.upnp.control.*;
 import org.cybergarage.upnp.std.av.server.action.*;

@@ -17,7 +17,7 @@ package org.cybergarage.upnp.std.av.server.object.format;
 
 import java.io.*;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.std.av.server.object.*;
 
 public class DefaultFormat implements Format, FormatObject

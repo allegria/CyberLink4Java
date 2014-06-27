@@ -53,7 +53,7 @@ import org.cybergarage.upnp.control.QueryResponse;
 import org.cybergarage.upnp.xml.NodeData;
 import org.cybergarage.upnp.xml.StateVariableData;
 import org.cybergarage.util.Debug;
-import org.cybergarage.xml.Node;
+import org.cybergarage.util.xml.Node;
 
 public class StateVariable extends NodeData
 {

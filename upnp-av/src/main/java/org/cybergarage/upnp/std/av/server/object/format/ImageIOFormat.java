@@ -21,7 +21,7 @@ import javax.imageio.*;
 import javax.imageio.stream.*;
 */
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.std.av.server.object.*;
 
 public abstract class ImageIOFormat extends Header implements Format, FormatObject

@@ -18,7 +18,7 @@ package org.cybergarage.upnp.std.av.server.directory.cmis;
 import java.io.*;
 
 import org.cybergarage.util.*;
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.std.av.server.*;
 import org.cybergarage.upnp.std.av.server.object.*;
 import org.cybergarage.upnp.std.av.server.object.item.file.*;

@@ -17,7 +17,7 @@
 package org.cybergarage.upnp.std.av.controller;
 
 import org.cybergarage.util.*;
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.*;
 import org.cybergarage.upnp.UPnP;
 import org.cybergarage.upnp.std.av.player.action.BrowseAction;

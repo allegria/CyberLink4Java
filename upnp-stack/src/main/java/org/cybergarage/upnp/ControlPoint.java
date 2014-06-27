@@ -65,11 +65,11 @@ import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.cybergarage.http.HTTPRequest;
-import org.cybergarage.http.HTTPRequestListener;
-import org.cybergarage.http.HTTPServerList;
+import org.cybergarage.net.http.HTTPRequest;
+import org.cybergarage.net.http.HTTPRequestListener;
+import org.cybergarage.net.http.HTTPServerList;
 import org.cybergarage.net.HostInterface;
-import org.cybergarage.upnp.control.RenewSubscriber;
+import org.cybergarage.upnp.event.RenewSubscriber;
 import org.cybergarage.upnp.device.DeviceChangeListener;
 import org.cybergarage.upnp.device.Disposer;
 import org.cybergarage.upnp.device.NotifyListener;
@@ -83,18 +83,18 @@ import org.cybergarage.upnp.event.PropertyList;
 import org.cybergarage.upnp.event.Subscription;
 import org.cybergarage.upnp.event.SubscriptionRequest;
 import org.cybergarage.upnp.event.SubscriptionResponse;
-import org.cybergarage.upnp.ssdp.SSDP;
-import org.cybergarage.upnp.ssdp.SSDPNotifySocketList;
-import org.cybergarage.upnp.ssdp.SSDPPacket;
-import org.cybergarage.upnp.ssdp.SSDPSearchRequest;
-import org.cybergarage.upnp.ssdp.SSDPSearchResponseSocketList;
+import org.cybergarage.net.ssdp.SSDP;
+import org.cybergarage.net.ssdp.SSDPNotifySocketList;
+import org.cybergarage.net.ssdp.SSDPPacket;
+import org.cybergarage.net.ssdp.SSDPSearchRequest;
+import org.cybergarage.net.ssdp.SSDPSearchResponseSocketList;
 import org.cybergarage.util.Debug;
 import org.cybergarage.util.ListenerList;
 import org.cybergarage.util.Mutex;
-import org.cybergarage.xml.Node;
-import org.cybergarage.xml.NodeList;
-import org.cybergarage.xml.Parser;
-import org.cybergarage.xml.ParserException;
+import org.cybergarage.util.xml.Node;
+import org.cybergarage.util.xml.NodeList;
+import org.cybergarage.util.xml.Parser;
+import org.cybergarage.util.xml.ParserException;
 
 public class ControlPoint implements HTTPRequestListener
 {

@@ -13,7 +13,7 @@
 
 package org.cybergarage.upnp.std.av.controller.server;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 
 public class BrowseResult
 {

@@ -25,7 +25,7 @@
 package org.cybergarage.upnp.std.av.server.object;
 
 import java.io.*;
-import org.cybergarage.soap.*;
+import org.cybergarage.net.soap.*;
 import org.cybergarage.util.*;
 
 public class DIDLLite

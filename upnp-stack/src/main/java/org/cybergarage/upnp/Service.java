@@ -76,8 +76,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Iterator;
 
-import org.cybergarage.http.HTTP;
-import org.cybergarage.http.HTTPResponse;
+import org.cybergarage.net.http.HTTP;
+import org.cybergarage.net.http.HTTPResponse;
 import org.cybergarage.upnp.control.ActionListener;
 import org.cybergarage.upnp.control.QueryListener;
 import org.cybergarage.upnp.device.InvalidDescriptionException;
@@ -86,16 +86,16 @@ import org.cybergarage.upnp.device.ST;
 import org.cybergarage.upnp.event.NotifyRequest;
 import org.cybergarage.upnp.event.Subscriber;
 import org.cybergarage.upnp.event.SubscriberList;
-import org.cybergarage.upnp.ssdp.SSDPNotifyRequest;
-import org.cybergarage.upnp.ssdp.SSDPNotifySocket;
-import org.cybergarage.upnp.ssdp.SSDPPacket;
+import org.cybergarage.net.ssdp.SSDPNotifyRequest;
+import org.cybergarage.net.ssdp.SSDPNotifySocket;
+import org.cybergarage.net.ssdp.SSDPPacket;
 import org.cybergarage.upnp.xml.ServiceData;
 import org.cybergarage.util.Debug;
 import org.cybergarage.util.Mutex;
 import org.cybergarage.util.StringUtil;
-import org.cybergarage.xml.Node;
-import org.cybergarage.xml.Parser;
-import org.cybergarage.xml.ParserException;
+import org.cybergarage.util.xml.Node;
+import org.cybergarage.util.xml.Parser;
+import org.cybergarage.util.xml.ParserException;
 
 public class Service
 {

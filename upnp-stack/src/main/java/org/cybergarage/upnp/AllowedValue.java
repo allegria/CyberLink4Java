@@ -15,7 +15,7 @@
 
 package org.cybergarage.upnp;
 
-import org.cybergarage.xml.Node;
+import org.cybergarage.util.xml.Node;
 
 public class AllowedValue
 {

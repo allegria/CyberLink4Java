@@ -21,10 +21,10 @@ import java.io.*;
 import java.net.InetAddress;
 
 import org.cybergarage.util.*;
-import org.cybergarage.http.*;
+import org.cybergarage.net.http.*;
 
 import org.cybergarage.upnp.*;
-import org.cybergarage.upnp.ssdp.*;
+import org.cybergarage.net.ssdp.*;
 import org.cybergarage.upnp.device.*;
 
 public class DeviceData extends NodeData

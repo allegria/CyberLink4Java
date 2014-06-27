@@ -26,10 +26,10 @@
 package org.cybergarage.upnp;
 
 import org.cybergarage.net.HostInterface;
-import org.cybergarage.soap.SOAP;
-import org.cybergarage.upnp.ssdp.SSDP;
+import org.cybergarage.net.soap.SOAP;
+import org.cybergarage.net.ssdp.SSDP;
 import org.cybergarage.util.Debug;
-import org.cybergarage.xml.Parser;
+import org.cybergarage.util.xml.Parser;
 
 public class UPnP
 {
@@ -180,6 +180,9 @@ public class UPnP
 	
 	public static final String createUUID()
 	{
+		
+		//1.1.4 UUID format and RECOMMENDED generation algorithms
+		
 		long time1 = System.currentTimeMillis();
 		long time2 = (long)((double)System.currentTimeMillis() * Math.random());
 		return 
@@ -228,10 +231,10 @@ public class UPnP
 		
 		String[] parserClass = new String[]{
 				System.getProperty(XML_CLASS_PROPERTTY),
-				"org.cybergarage.xml.parser.XmlPullParser",
-				"org.cybergarage.xml.parser.JaxpParser",
-				"org.cybergarage.xml.parser.kXML2Parser",
-				"org.cybergarage.xml.parser.XercesParser"
+				"org.cybergarage.util.xml.parser.XmlPullParser",
+				"org.cybergarage.util.xml.parser.JaxpParser",
+				"org.cybergarage.util.xml.parser.kXML2Parser",
+				"org.cybergarage.util.xml.parser.XercesParser"
 		};
 		
 		for (int i = 0; i < parserClass.length; i++) {

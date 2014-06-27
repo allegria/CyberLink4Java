@@ -15,7 +15,7 @@
 
 package org.cybergarage.upnp.device;
 
-import org.cybergarage.upnp.ssdp.*;
+import org.cybergarage.net.ssdp.*;
 
 public interface NotifyListener
 {

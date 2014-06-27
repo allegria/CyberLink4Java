@@ -15,7 +15,7 @@
 
 package org.cybergarage.upnp.std.av.server.object.container;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.std.av.server.object.*;
 import org.cybergarage.upnp.std.av.server.object.item.ItemNode;
 

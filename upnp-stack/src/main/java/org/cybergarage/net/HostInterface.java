@@ -1,27 +1,16 @@
-/******************************************************************
+/*********************************************************************
 *
-*	CyberHTTP for Java
-*
-*	Copyright (C) Satoshi Konno 2002-2003
-*
+*	CyberLink UPnP for Java
+*	Inspired by: Satoshi Konno
 *	File: HostInterface.java
 *
-*	Revision;
+*	UPnP Specification 1.1 - Addressing is Step 0 of UPnP networking.
+*	CyberLink UPnP for Java libraries are intended to run on top of a
+*	host that is managing the networking stack and the net libraries
+*	will primarily be used to interrogate the running stack not to
+*	initiate it. 
 *
-*	05/12/03
-*		- first revision.
-*	05/13/03
-*		- Added support for IPv6 and loopback address.
-*	02/15/04
-*		- Added the following methods to set only a interface.
-*		- setInterface(), getInterfaces(), hasAssignedInterface()
-*	06/30/04
-*		- Moved the package from org.cybergarage.http to org.cybergarage.net.
-*	06/30/04
-*		- Theo Beisch <theo.beisch@gmx.de>
-*		- Changed isUseAddress() to isUsableAddress().
-*	
-******************************************************************/
+**********************************************************************/
 
 package org.cybergarage.net;
 
@@ -42,22 +31,87 @@ public class HostInterface
 	//	Constants
 	////////////////////////////////////////////////
 	
+	/*
+	 *	UPnP Specification
+	 *	Devices and control points MUST support IPv4-only, and MAY also support IPv6. 
+	 *	IPv6-only devices and control points are NOT allowed in UPnP, since these cannot
+	 *	interoperate with IPv4-only control points and devices. 
+	 *	All IPv6 devices and control points are therefore inherently multi-homed and must
+	 *	adhere to all multi-homed behaviors.
+	 */
+	
 	public static boolean USE_LOOPBACK_ADDR = false;
 	public static boolean USE_ONLY_IPV4_ADDR = false;
 	public static boolean USE_ONLY_IPV6_ADDR = false;
-	 
+
+	
+	
+	/*
+	 * 	TODO include the following classes' networking aspects in this class as makes sense:
+	 * 	org.cybergarage.upnp.std.av.renderer.MediaRenderer
+	 * 	org.cybergarage.upnp.std.av.server.MediaServer
+	 * 	org.cybergarage.upnp.Device
+	 * 	org.cybergarage.http.HTTPServer
+	 * 	org.cybergarage.http.HTTPServerList
+	 * 	org.cybergarage.http.HTTPPacket
+	 * 	org.cybergarage.upnp.ControlPoint
+	 *	org.cybergarage.upnp.ssdp.HTTPMUSocket
+	 * 	org.cybergarage.upnp.ssdp.HTTPUSocket
+	 * 	org.cybergarage.upnp.ssdp.SSDPNotifySocket
+	 * 	org.cybergarage.upnp.ssdp.SSDPNotifySocketList
+	 * 	org.cybergarage.upnp.ssdp.SSDPPacket
+	 * 	org.cybergarage.upnp.ssdp.SSDPSearchRequest
+	 * 	org.cybergarage.upnp.ssdp.SSDPSearchResponseSocket
+	 * 	org.cybergarage.upnp.ssdp.SSDPSearchResponseSocketList
+	 * 	org.cybergarage.upnp.ssdp.SSDPSearchSocket
+	 * 	org.cybergarage.upnp.ssdp.SSDPSearchSocketList
+	 * 	org.cybergarage.upnp.xml.DeviceData
+	 * 	org.cybergarage.upnp.UPnP
+	 * 	ContentDirectory -> MediaServer
+	 * 	Subscriber ??
+	 * 	ResourceNode -> GetNetwork ??
+	 */
+	
 	////////////////////////////////////////////////
 	//	Network Interfaces
 	////////////////////////////////////////////////
 	
-	private static String ifAddress = "";
+	private static String ifAddress = "10.1.1.16";
+	private static boolean bFoundAddress = false;
+	
 	public final static int IPV4_BITMASK =  0x0001;
 	public final static int IPV6_BITMASK =  0x0010;
 	public final static int LOCAL_BITMASK = 0x0100;
 
+	/*	
+	 * 	the interface(s) to use for the device can be passed in
+	 * 	from configuration at startup or can can be auto configured
+	 * 	through interrogation of the host's interfaces
+	 */
+	
 	public final static void setInterface(String ifaddr)
 	{
-		ifAddress = ifaddr;
+		if (hasAssignedInterface() == true)
+			ifAddress =  getInterface();
+			
+		try {
+			Enumeration nis = NetworkInterface.getNetworkInterfaces();
+			while (nis.hasMoreElements() && bFoundAddress == false){
+				NetworkInterface ni = (NetworkInterface)nis.nextElement();
+				Enumeration addrs = ni.getInetAddresses();
+				while (addrs.hasMoreElements()) {
+					InetAddress addr = (InetAddress)addrs.nextElement();
+					if (addr.getHostAddress() == ifaddr)
+						if (isUsableAddress(addr) == true)
+						{
+							ifAddress = ifaddr;
+							bFoundAddress = true;
+							break;
+						}
+				}
+			}
+		}
+		catch(Exception e){};
 	}
 	
 	public final static String getInterface()
@@ -98,6 +152,8 @@ public class HostInterface
 		if (hasAssignedInterface() == true)
 			return 1;
 			
+		
+		// work out the number of network addresses on the host
 		int nHostAddrs = 0;
 		try {
 			Enumeration nis = NetworkInterface.getNetworkInterfaces();
@@ -168,6 +224,7 @@ public class HostInterface
 	}
 	
 	
+	//this one needs to stay
 	public final static String getHostAddress(int n)
 	{
 		if (hasAssignedInterface() == true)
@@ -281,6 +338,29 @@ public class HostInterface
 	////////////////////////////////////////////////
 	//	getHostURL
 	////////////////////////////////////////////////
+	
+	/*
+	 * 	TODO include the following classes' URL aspects in this class as makes sense:
+	 *	ItemNode
+	 *	ResourceNode
+	 *	ContentDirectory
+	 *	HTTP
+	 *	HTTPRequest
+	 *	ControlRequest
+	 *	QueryRequest
+	 *	NotifyRequest
+	 *	Subscriber
+	 *	SubscriptionRequest
+	 *	ServiceData
+	 *	ControlPoint
+	 *	Device
+	 *	Service
+	 *	Parser
+	 *	Icon ??
+	 *	SOAP ??
+	 *	MySQL ??
+	 */
+	
 	
 	public final static String getHostURL(String host, int port, String uri)
 	{

@@ -20,7 +20,7 @@ package org.cybergarage.upnp.std.av.server.object.item.mythtv;
 
 import java.io.*;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.util.*;
 import org.cybergarage.upnp.std.av.server.*;
 import org.cybergarage.upnp.std.av.server.directory.mythtv.*;

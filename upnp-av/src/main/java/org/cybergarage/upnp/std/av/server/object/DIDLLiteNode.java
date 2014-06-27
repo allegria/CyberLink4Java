@@ -19,7 +19,7 @@
 
 package org.cybergarage.upnp.std.av.server.object;
 
-import org.cybergarage.xml.Node;
+import org.cybergarage.util.xml.Node;
 
 public class DIDLLiteNode extends Node // Thanks for Brent Hills (10/28/04)
 {

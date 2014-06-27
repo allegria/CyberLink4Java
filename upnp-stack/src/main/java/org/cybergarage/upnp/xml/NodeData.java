@@ -15,7 +15,7 @@
 
 package org.cybergarage.upnp.xml;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 
 public class NodeData
 {

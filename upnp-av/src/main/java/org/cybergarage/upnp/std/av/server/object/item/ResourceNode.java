@@ -17,7 +17,7 @@
 
 package org.cybergarage.upnp.std.av.server.object.item;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 import org.cybergarage.upnp.std.av.server.object.*;
 
 public class ResourceNode extends ContentNode

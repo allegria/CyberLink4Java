@@ -16,7 +16,7 @@
 ******************************************************************/
 
 package org.cybergarage.upnp;
-import org.cybergarage.http.HTTPStatus;
+import org.cybergarage.net.http.HTTPStatus;
 
 public class UPnPStatus
 {

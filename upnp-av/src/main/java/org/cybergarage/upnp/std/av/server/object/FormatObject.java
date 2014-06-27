@@ -15,7 +15,7 @@
 
 package org.cybergarage.upnp.std.av.server.object;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 
 public interface FormatObject
 {

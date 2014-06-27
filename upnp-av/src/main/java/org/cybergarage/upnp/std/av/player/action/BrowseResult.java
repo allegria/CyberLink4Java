@@ -13,7 +13,7 @@
 
 package org.cybergarage.upnp.std.av.player.action;
 
-import org.cybergarage.xml.*;
+import org.cybergarage.util.xml.*;
 
 public class BrowseResult
 {
