@@ -8,7 +8,7 @@
 *
 ******************************************************************/
 
-package org.cybergarage.http;
+package org.cybergarage.net.http;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
